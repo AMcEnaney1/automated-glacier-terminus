@@ -80,7 +80,7 @@ def pad_square(nparray):
     # Pad an array to be square if not square
     # INPUT: the array
     # OUTPUT: the square (padded) array
-    [ly,lx] = nparray.shape
+    """[ly,lx] = nparray.shape
     if lx > ly:
         zeros = np.zeros((lx,lx))
         zeros[:ly,:lx] = nparray
@@ -89,7 +89,11 @@ def pad_square(nparray):
         zeros[:ly,:lx] = nparray
     else:
         zeros = nparray
-    nparray = zeros
+    nparray = zeros"""
+    
+    nparray.resize((max(len(nparray), len(nparray[0])),max(len(nparray), len(nparray[0]))),refcheck=False)
+    
+    zeros = nparray
     
     return zeros
 
